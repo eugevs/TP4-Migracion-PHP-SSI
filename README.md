@@ -61,3 +61,37 @@ Se trabajó en la rama `feature/migracion-php-ssi`, con commits por cada cambio 
 ## Autora
 
 Vivas Florencia, IES N° 6001. Tecnicatura Superior en Análisis de Sistemas y Desarrollo de Software.
+
+
+## Clase 5: Formularios POST y GET con sanitización
+
+### Formulario POST: `clase5/contacto.php`
+Formulario de contacto (nombre, email y mensaje) enviado por POST. Valida en el servidor que los campos no estén vacíos, que el email tenga formato válido y que el mensaje tenga al menos 10 caracteres. Muestra mensajes de error por campo, un mensaje de éxito al enviar y conserva lo escrito si hay errores.
+
+### Formulario GET: `clase5/buscar.php`
+Buscador de lugares por nombre o provincia, enviado por GET (`?q=`). Muestra los resultados o un mensaje si no hay coincidencias.
+
+### Seguridad (XSS)
+Los datos recibidos se limpian con `trim()` y `filter_input()`, y se muestran siempre con `htmlspecialchars()` (función `limpiar()` en `funciones.php`).
+
+### Capturas
+
+**Errores de validación**
+
+![Errores de validación](clase5/capturas/errores.png)
+
+**Persistencia de datos tras un error**
+
+![Persistencia de datos](clase5/capturas/persistencia.png)
+
+**Envío exitoso**
+
+![Envío exitoso](clase5/capturas/exito.png)
+
+**Prueba de XSS (el script se muestra como texto y no se ejecuta)**
+
+![Prueba XSS](clase5/capturas/xss.png)
+
+**Búsqueda por GET**
+
+![Búsqueda GET](clase5/capturas/busqueda.png)

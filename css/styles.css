@@ -46,3 +46,8 @@
   max-height: 420px;
   object-fit: cover;
 }
+
+.navbar-nav .nav-link.active {
+    font-weight: bold !important;
+    color: #000 !important;
+}
