@@ -13,7 +13,7 @@ Sitio web de rutas en bici, caminatas y equipamiento para actividades al aire li
 
 ## Prototipo en Figma
 
-[Ver diseño en Figma](https://www.figma.com/design/gZ57WNrR4t77iuQLHqTc4z/sitio-web--copia-?node-id=23-51&t=DQoxY4XT1FBTGtPk-1)
+[Ver diseño en Figma](https://www.figma.com/design/gZ57WNrR4t77iuQLHqTc4z/sitio-web--copia-?node-id=23-51&t=xxjSFO9o9xcTvURX-1)
 
 ## Tecnologías utilizadas
 
@@ -37,7 +37,7 @@ Sitio web de rutas en bici, caminatas y equipamiento para actividades al aire li
 1. Instalar XAMPP e iniciar el módulo **Apache** desde el panel de control.
 2. Clonar el repositorio dentro de la carpeta `htdocs` de XAMPP: `git clone https://github.com/eugevs/TP4-Migracion-PHP-SSI.git explorando-lugares`
 3. Dentro de la carpeta del proyecto, crear el archivo `.env` a partir de la plantilla: `copy .env.example .env`, y completar los valores.
-4. Abrir en el navegador `http://localhost/explorando-lugares/index.php`.
+4. Abrir en el navegador `http://localhost/TP%20N%C2%B0%204/index.php`.
 
 ## Evidencia de funcionamiento
 
