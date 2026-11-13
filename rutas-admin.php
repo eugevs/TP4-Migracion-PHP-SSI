@@ -1,4 +1,6 @@
 <?php
+$rol_requerido = 'admin';
+require_once 'includes/auth_guard.php';
 require_once 'config/conexion.php';
 
 $sql = "SELECT r.id, r.nombre, r.dificultad, r.distancia_km,

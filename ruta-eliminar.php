@@ -1,4 +1,6 @@
 <?php
+$rol_requerido = 'admin';
+require_once 'includes/auth_guard.php';
 require_once 'config/conexion.php';
 
 // Solo se acepta POST: borrar por GET es inseguro (un link o una imagen podrían dispararlo)

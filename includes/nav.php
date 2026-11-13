@@ -31,23 +31,28 @@ function nav_item(string $archivo, string $texto, string $pagina_actual): void
               <?php nav_item('caminatas.php', 'Caminatas', $pagina_actual); ?>
               <?php nav_item('equipamiento.php', 'Equipamiento', $pagina_actual); ?>
               <?php nav_item('contacto.php', 'Contacto', $pagina_actual); ?>
+              <?php if (($_SESSION['rol'] ?? '') === 'admin'): ?>
+                <?php nav_item('rutas-admin.php', 'Administrar', $pagina_actual); ?>
+                <?php nav_item('admin_panel.php', 'Usuarios', $pagina_actual); ?>
+              <?php endif; ?>
+
               <?php if (isset($_SESSION['usuario_id'])): ?>
-  <?php nav_item('dashboard.php', 'Mi panel', $pagina_actual); ?>
-  <?php if (($_SESSION['rol'] ?? '') === 'admin'): ?>
-    <?php nav_item('rutas-admin.php', 'Administrar', $pagina_actual); ?>
-    <?php nav_item('admin_panel.php', 'Usuarios', $pagina_actual); ?>
-  <?php endif; ?>
-  <li class="nav-item ms-lg-3 my-1 my-lg-0">
-    <a class="btn btn-outline-dark" href="logout.php">Cerrar sesión</a>
-  </li>
-<?php else: ?>
-  <li class="nav-item ms-lg-3 my-1 my-lg-0">
-    <a class="btn btn-outline-dark" href="login.php">Iniciar sesión</a>
-  </li>
-  <li class="nav-item my-1 my-lg-0">
-    <a class="btn btn-dark ms-lg-2" href="registro.php">Crear cuenta</a>
-  </li>
-<?php endif; ?>
+                <li class="nav-item ms-lg-3 my-1 my-lg-0">
+                  <a class="btn btn-outline-dark" href="dashboard.php">
+                    Hola, <?= htmlspecialchars($_SESSION['usuario_nombre']) ?>
+                  </a>
+                </li>
+                <li class="nav-item my-1 my-lg-0">
+                  <a class="btn btn-dark ms-lg-2" href="logout.php">Cerrar sesión</a>
+                </li>
+              <?php else: ?>
+                <li class="nav-item ms-lg-3 my-1 my-lg-0">
+                  <a class="btn btn-outline-dark" href="login.php">Iniciar sesión</a>
+                </li>
+                <li class="nav-item my-1 my-lg-0">
+                  <a class="btn btn-dark ms-lg-2" href="registro.php">Crear cuenta</a>
+                </li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>

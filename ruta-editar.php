@@ -1,4 +1,6 @@
 <?php
+$rol_requerido = 'admin';
+require_once 'includes/auth_guard.php';
 require_once 'config/conexion.php';
 require_once 'includes/validar-ruta.php';
 
