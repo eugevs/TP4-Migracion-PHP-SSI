@@ -95,3 +95,12 @@ Los datos recibidos se limpian con `trim()` y `filter_input()`, y se muestran si
 **Búsqueda por GET**
 
 ![Búsqueda GET](clase5/capturas/busqueda.png)
+
+## TP6: Esquema relacional
+Carpeta `tp6/`: `schema.sql`, `consultas.sql` y `NORMALIZACION.md`.
+
+## TP7: CRUD con PDO
+`rutas-admin.php`, `ruta-crear.php`, `ruta-editar.php`, `ruta-eliminar.php` y `config/conexion.php`. Consultas preparadas y `htmlspecialchars()` en las vistas.
+
+## TP8: Sesiones y autenticación
+`registro.php`, `login.php`, `logout.php`, `dashboard.php`, `admin_panel.php`, `config/sesion.php` e `includes/auth_guard.php`. Contraseñas con `password_hash` y control de acceso por rol.
