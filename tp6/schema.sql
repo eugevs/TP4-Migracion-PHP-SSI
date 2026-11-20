@@ -68,3 +68,27 @@ CREATE TABLE ruta_equipamiento (
 -- Índices explícitos (búsqueda por nombre y filtro por dificultad)
 CREATE INDEX idx_rutas_nombre ON rutas(nombre);
 CREATE INDEX idx_rutas_dificultad ON rutas(dificultad);
+
+CREATE TABLE IF NOT EXISTS comentarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  ruta_id INT NOT NULL,
+  usuario_id INT NOT NULL,
+  contenido VARCHAR(500) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_comentarios_rutas
+    FOREIGN KEY (ruta_id) REFERENCES rutas(id) ON DELETE CASCADE,
+  CONSTRAINT fk_comentarios_usuarios
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS rutas_realizadas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT NOT NULL,
+  ruta_id INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE KEY uq_usuario_ruta (usuario_id, ruta_id),
+  CONSTRAINT fk_rr_usuarios
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE,
+  CONSTRAINT fk_rr_rutas
+    FOREIGN KEY (ruta_id) REFERENCES rutas(id) ON DELETE CASCADE
+) ENGINE=InnoDB;

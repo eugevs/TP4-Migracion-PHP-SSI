@@ -54,14 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const card = crear('div', 'card h-100');
       const cuerpo = crear('div', 'card-body');
 
-      const boton = crear('button', 'btn btn-sm btn-outline-dark', 'Ver detalle');
+      const boton = crear('button', 'btn btn-sm btn-outline-dark', 'Vista rápida');
       boton.type = 'button';
       boton.addEventListener('click', () => verDetalle(ruta.id));
+
+      const enlace = crear('a', 'btn btn-sm btn-primary ms-2', 'Ver ficha y comentarios');
+      enlace.href = `ruta-detalle.php?id=${encodeURIComponent(ruta.id)}`;
 
       cuerpo.append(
         crear('h2', 'h5 card-title', ruta.nombre),
         crear('p', 'card-text mb-2', `${ruta.provincia} · ${ruta.categoria} · Dificultad: ${ruta.dificultad}`),
-        boton
+        boton,
+        enlace
       );
       card.append(cuerpo);
       col.append(card);

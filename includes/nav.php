@@ -27,11 +27,10 @@ function nav_item(string $archivo, string $texto, string $pagina_actual): void
           <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto align-items-lg-center">
               <?php nav_item('index.php', 'Inicio', $pagina_actual); ?>
-              <?php nav_item('ruta-detalle.php', 'Rutas', $pagina_actual); ?>
+              <?php nav_item('explorar.php', 'Rutas', $pagina_actual); ?>
               <?php nav_item('caminatas.php', 'Caminatas', $pagina_actual); ?>
               <?php nav_item('equipamiento.php', 'Equipamiento', $pagina_actual); ?>
               <?php nav_item('contacto.php', 'Contacto', $pagina_actual); ?>
-              <?php nav_item('explorar.php', 'Explorar', $pagina_actual); ?>
               <?php if (($_SESSION['rol'] ?? '') === 'admin'): ?>
                 <?php nav_item('rutas-admin.php', 'Administrar', $pagina_actual); ?>
                 <?php nav_item('admin_panel.php', 'Usuarios', $pagina_actual); ?>
