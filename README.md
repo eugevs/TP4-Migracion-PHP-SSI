@@ -104,3 +104,14 @@ Carpeta `tp6/`: `schema.sql`, `consultas.sql` y `NORMALIZACION.md`.
 
 ## TP8: Sesiones y autenticación
 `registro.php`, `login.php`, `logout.php`, `dashboard.php`, `admin_panel.php`, `config/sesion.php` e `includes/auth_guard.php`. Contraseñas con `password_hash` y control de acceso por rol.
+
+
+## TP10: MVC y framework
+
+### Parte A: MVC nativo
+`rutas-mvc.php` (enrutador) con `app/Models/Ruta.php` (consultas PDO preparadas), `app/Controllers/RutaController.php` (solicitud y validación) y `app/Views/rutas/` (HTML). Acceso restringido al rol admin.
+
+### Parte B: módulo en Laravel
+Carpeta `laravel-rutas/`: modelos Eloquent (`Ruta`, `Provincia`, `Categoria`), `RutaController`, rutas en `routes/web.php` y vista Blade `resources/views/rutas/index.blade.php`. Endpoints: `/rutas` (HTML con filtro por provincia) y `/rutas/json` (JSON).
+
+Para ejecutarlo: `cd laravel-rutas`, `composer install`, copiar `.env.example` a `.env`, ejecutar `php artisan key:generate`, configurar la base `explorando_lugares` en el `.env` y correr `php artisan serve`.
